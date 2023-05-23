@@ -39,6 +39,7 @@ namespace ExampleTcpClient
         
         static async void Connect(string address,string addressName)
         {
+            string sData ="";
             Console.WriteLine("Synchronization . . . ");
             string messageSynchronization = "SYN";
             Byte[] data = new byte[1024];
@@ -67,6 +68,9 @@ namespace ExampleTcpClient
                 char[] message = new char[1];
                 message[0] = (char)i;
                 stream.Write(Encoding.ASCII.GetBytes(message), 0, 1);
+                await data = stream.ReadAsync(data, 0, data.Length);
+                sData = Encoding.ASCII.GetString(data, 0, data.Length);
+                if (sData == "Error") i--;
             }
 
             stream.Close();
