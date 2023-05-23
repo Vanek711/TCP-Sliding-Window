@@ -2,6 +2,7 @@
 ## Server
 The server was created in python. Its functions include synchronization, information processing, data sending, the server is based on raspberry 3 B, for data transfer, the client and server must be on the same subnet.
 
+![image](https://github.com/Varenik711/TCP-Sliding-Window/blob/master/image.png)
 
 
 ## Client
